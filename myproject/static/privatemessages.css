@@ -1,0 +1,161 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #000;
+    background: #fff;
+}
+
+textarea, form p.name input {
+    border: 1px #d4d4d4 solid;
+}
+
+form.new_message p {
+    margin: 4px 0;
+}
+
+form.new_message p.name input, form.new_message textarea {
+    width: 300px;
+}
+
+form.new_message textarea {
+    height: 100px;
+}
+
+textarea:focus, input.name:focus {
+    border-color: #cacaca;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba(150, 150, 150, 0.5);
+       -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba(150, 150, 150, 0.5);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px rgba(150, 150, 150, 0.5);
+}
+
+div.private_messages {
+    padding: 10px;
+}
+
+div.private_messages h1 {
+    margin-top: 0;
+}
+
+div.private_messages div.partners {
+    margin-bottom: 30px;
+}
+
+div.chat {
+    height: 100%;
+    min-height: 400px;
+    min-width: 600px;
+    position: relative;
+    background-color: #e0e0e0;
+}
+
+div.chat div.partner {
+    height: 50px;
+    padding: 5px;
+}
+
+div.chat div.partner p {
+    margin: 0;
+}
+
+div.chat div.partner p.name {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+div.chat div.conversation {
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    right: 5px;
+    bottom: 140px;
+    overflow: auto;
+    padding: 0 5px;
+    border-style: solid;
+    border-color: #eee;
+    border-width: 10px 0;
+    background-color: #fff;
+    -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+            border-radius: 7px;
+}
+
+div.chat div.conversation div.message {
+    padding: 5px 0;
+}
+
+div.chat div.conversation div.message p {
+    margin: 0;
+}
+
+div.chat div.conversation div.message p.author.partner {
+    color: #002c64;
+}
+
+div.chat div.conversation div.message p.author.we {
+    color: #216300;
+}
+
+div.chat div.conversation div.message p.author span.datetime {
+    font-size: 12px;
+}
+
+div.chat form.message_form {
+    position: absolute;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    height: 130px;
+}
+
+div.chat form.message_form div.outdated_browser_message {
+    margin: 10px 5px;
+}
+
+div.chat form.message_form div.compose {
+    float: left;
+    height: 100%;
+    width: 80%;
+    padding: 0 5px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+div.chat form.message_form div.compose textarea {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    resize: none;
+}
+
+div.chat form.message_form div.send {
+    float: left;
+    height: 100%;
+    width: 20%;
+    min-width: 100px;
+    padding-right: 5px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+div.chat form.message_form div.send p {
+    margin-top: 5px;
+    color: #333;
+}
+
+div.chat form.message_form div.send button {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}

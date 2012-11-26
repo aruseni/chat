@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{{ partner.username }}{% endblock %}
+
+{% block head %}
+<script type="text/javascript">
+$(document).ready(function() {
+    activate_chat({{ thread_id }}, "{{ user.username }}", {
+        "total": {{ messages_total }},
+        "sent": {{ messages_sent }},
+        "received": {{ messages_received }}
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+{% load pluralize %}
+<div class="chat">
+    <div class="partner">
+        <p class="name">{{ partner.username }}</p>
+        <p class="messages"><span class="total">{{ messages_total }}</span> {{ messages_total|rupluralize:"сообщение,сообщения,сообщений" }} (<span class="received">{{ messages_received }}</span> получено, <span class="sent">{{ messages_sent }}</span> отправлено)</p>
+    </div>
+    <div class="conversation">
+        {% for message in thread_messages reversed %}
+        <div class="message"> 
+            {% if message.sender == user %}<p class="author we"><span class="datetime">{{ message.datetime|date:"d.m.Y H:i:s" }}</span> {{ user.username }}:</p>{% else %}<p class="author partner"><span class="datetime">{{ message.datetime|date:"d.m.Y H:i:s" }}</span> {{ partner.username }}:</p>{% endif %}
+            <p class="message">{{ message.text|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <form class="message_form">
+        <div class="compose">
+            <textarea rows="1" cols="30" id="message_textarea"></textarea>
+        </div>
+        <div class="send">
+            <button class="btn" type="button">Отправить</button>
+            <p>Вы также можете отправлять сообщения с помощью клавиш Ctrl + Enter.</p>
+        </div>
+    </form>
+</div>
+{% endblock content %}
