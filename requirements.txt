@@ -1,0 +1,5 @@
+Django
+tornado
+pytz
+redis
+git+https://github.com/evilkost/brukva.git
